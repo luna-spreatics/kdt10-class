@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function prac</title>
+    <script>
+        // 1번
+        function multifly(num1, num2) {
+            return Number(num1) * Number(num2);
+        }
+
+        console.log(multifly(3, 7));
+        console.log(multifly('2', 2));
+
+        // 2번
+        function square(num1) {
+            let num = Number(num1);
+            console.log(num * num);
+            console.log(Number(num1) * Number(num1));
+        }
+        square(4);
+        square(11);
+
+        // 3번
+        // 전역변수랑 지역변수
+        // 전역변수 > 지역변수 범위가 큰 것
+        // but 지역변수 좀 더 특별한 것
+        // let num1 = prompt('첫번째 숫자');
+        // num1 = Number(num1);
+        // let num2 = prompt('두번째 숫자');
+        // num2 = Number(num2);
+
+        // function add() {
+        //     // let num1 = 1;
+        //     let result = num1 + num2;
+        //     alert(result);
+        // }
+        // function sub() {
+        //     let result = num1 - num2;
+        //     alert(result);
+        // }
+        // function mul() {
+        //     let result = num1 * num2;
+        //     alert(result);
+        // }
+        // function div() {
+        //     let result = num1 / num2;
+        //     alert(result);
+        // }
+
+        // if문 실습 4번
+        // let age = prompt('몇살이세요?');
+        // age = Number(age);
+        // if(age >= 20) console.log('성인');
+        // else if(age >= 17) console.log('고등학생');
+        // else if(age >= 14) console.log('중학생');
+        // else if(age >= 8) console.log('초등학생');
+        // else if(age >= 0) console.log('유아');
+
+        // if문 실습 5번
+        // let age = prompt('몇살이세요?');
+        // let gender = prompt('성별은?');
+        // age = Number(age);
+        // if (age >= 20) {
+        //     if (gender == "여") console.log('성인 여자');
+        //     else if (gender == "남") console.log('성인 남자');
+        // }
+        // else if (age >= 17) console.log('고등학생');
+        // else if (age >= 14) console.log('중학생');
+        // else if (age >= 8) console.log('초등학생');
+        // else if (age >= 0) console.log('유아');
+
+        // if (gender == '여') {
+        //     if (age >= 20) console.log('성인 여자');
+        //     else if (age >= 17) console.log('고등학생');
+        //     else if (age >= 14) console.log('중학생');
+        //     else if (age >= 8) console.log('초등학생');
+        //     else if (age >= 0) console.log('유아');
+        // } else if(gender == '남') {
+        //     if (age >= 20) console.log('성인 남자');
+        //     else if (age >= 17) console.log('고등학생');
+        //     else if (age >= 14) console.log('중학생');
+        //     else if (age >= 8) console.log('초등학생');
+        //     else if (age >= 0) console.log('유아');
+        // }
+
+        // 3항 연산자 실습
+        let now = new Date().getHours();
+        console.log(now)
+        now < 12 ? console.log('현재시간은 오전') : console.log('현재시간은 오후')
+
+        // for문 실습1
+        // for(let i = 0; i <= 1000; i = i + 13) {
+        //     if(i % 2 == 1) console.log(i)
+        // }
+        // for(let i = 0; i <= 1000; i++) {
+        //     if(i % 13 == 0 && i % 2 == 1) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // for문 실습2
+        // for(let i = 2; i < 10; i++) {
+        //     console.log(i + "단");
+        //     for(let j = 1; j < 10; j++) {
+        //         console.log(i + " x " + j + " = " + i*j);
+        //     }
+        // }
+
+        // 9번
+        let n = prompt('정수 n을 입력하세요. (단, 0 < n < 100)');
+        n = Number(n);
+        console.log(n)
+        let sum = 0;
+
+        for(let i = 0; i < n; i++) {
+            if (n <= 0 || n >= 100) {
+                alert('입력값이 잘못됐습니다.');
+                break;
+            }
+            else {
+                if(i % 2 == 0 || i % 3 == 0) sum += i;
+            }
+        }
+        console.log('sum :', sum);
+
+        let sum2 = 0;
+        let i = 0;
+        while(i < n) {
+            if(i % 2 == 0 || i % 3 == 0) sum2 += i;
+            i++;
+        }
+
+        // for in 구문, do while 구문을 한번 공부해와보세요
+
+    </script>
+</head>
+
+<body>
+    <!-- <button onclick="add()">add</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="mul()">mul</button>
+    <button onclick="div()">div</button> -->
+</body>
+
+</html>
