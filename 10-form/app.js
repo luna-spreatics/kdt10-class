@@ -3,7 +3,8 @@ const app = express();
 const PORT = 8000;
 
 app.set('view engine', 'ejs');
-app.set('/views', 'views');
+// app.set('views', './test');
+// app.set('views', './views'); // view 템플릿 파일을 찾을 때 사용할 디렉토리 지정
 
 // 미들웨어 등록
 
