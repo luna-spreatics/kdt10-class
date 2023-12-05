@@ -15,10 +15,10 @@ console.log('config >', config);
 const db = {};
 // 시퀄라이즈 객체 선언시 매개변수로 다음 정보들을 받음
 const sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
+  config.database,
+  config.username,
+  config.password,
+  config
 )
 
 db.sequelize = sequelize;
@@ -27,6 +27,9 @@ db.Sequelize = Sequelize;
 db.Visitor = require('./Visitor')(sequelize, Sequelize);
 // models/Visitor.js에서 정의한 모델이 db.Visitor에 들어감
 // db = { sequelize: sequelize, Sequelize: Sequelize, Visitor: ~~~ }
+
+// user 추가
+db.User = require('./User')(sequelize, Sequelize);
 
 module.exports = db;
 // db라는 변수를 내보냄

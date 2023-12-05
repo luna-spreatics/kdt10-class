@@ -10,8 +10,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // [라우터 분리]
-// const indexRouter = require('./routes');
-// app.use('/', indexRouter); // localhost:PORT/
+const indexRouter = require('./routes');
+app.use('/', indexRouter); // localhost:PORT/
+
+// user 실습
+const userRouter = require('./routes/user');
+app.use('/user', userRouter); // localhost:PORT/
 
 // [404 error] 맨 마지막 라우트로 선언
 app.get('*', (req, res) => {
