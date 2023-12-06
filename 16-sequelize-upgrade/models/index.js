@@ -20,22 +20,26 @@ const Team = require('./Team')(sequelize, Sequelize);
 // 한 선수당 하나의 프로필을 가짐
 Player.hasOne(Profile, {
     foreignKey: 'player_id',
-    sourceKey: 'player_id',
+    // sourceKey: 'player_id', // 기본키 사용시 생략가능
     // 연쇄 삭제, 수정
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
 });
 Profile.belongsTo(Player, {
     foreignKey: 'player_id',
-    targetKey: 'player_id'
+    // targetKey: 'player_id' // 기본키 사용시 생략가능
 })
 
 // 2) Team : Player = 1 : N
 // 한 팀에는 여러 선수가 존재
-Team.hasMany(Player, { foreignKey: 'team_id', sourceKey: 'team_id' });
+Team.hasMany(Player,
+    {
+        foreignKey: 'team_id',
+        // sourceKey: 'team_id'
+    });
 Player.belongsTo(Team, {
     foreignKey: 'team_id',
-    targetKey: 'team_id'
+    // targetKey: 'team_id'
 })
 
 
