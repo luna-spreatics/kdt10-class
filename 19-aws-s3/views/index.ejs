@@ -41,7 +41,14 @@
             'Content-Type': 'multipart/form-data'
           }
         })
-        console.log(res.data);
+        console.log(res.data); // [ {}, {} ] => location: src 속성값으로
+        res.data.forEach((elem) => {
+          const img = document.createElement('img');
+          img.src = elem.location;
+          img.alt = elem.originalname;
+          img.style.width = '500px';
+          resultBox.appendChild(img);
+        })
       } catch (err) {
         console.log('err >', err);
       }
