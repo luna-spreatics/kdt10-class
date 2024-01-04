@@ -5,6 +5,7 @@ import Ex2 from './Ex2';
 import Ex3 from './Ex3';
 import HandlerEx from './HandlerEx';
 import SyntheticEvent from './SyntheticEvent';
+import ExAll from './exAll/ExAll';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
       <hr />
 
       <Ex3 />
+      <hr />
+
+      {/* 전체 실습 */}
+      <ExAll />
     </div>
   );
 }
